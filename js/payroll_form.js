@@ -20,4 +20,35 @@ window.addEventListener('DOMContentLoaded',(event)=>{
     salary.addEventListener('input',function(){
     output.textContent=salary.value;
     })
+
+
+    const day=document.querySelector('#day');
+    const month=document.querySelector('#month');
+    const year=document.querySelector('#year');
+    const startdateError=document.querySelector('.startdate-error');
+    day.addEventListener('input',function(){
+        try{
+            (new EmployeePayrollData()).startDate=day.value+"-"+month.value+"-"+year.value;;
+            startdateError.textContent="";
+        }catch(e){
+            startdateError.textContent=e;
+        }
+    })
+    month.addEventListener('input',function(){
+        try{
+            (new EmployeePayrollData()).startDate=day.value+"-"+month.value+"-"+year.value;;
+            startdateError.textContent="";
+        }catch(e){
+            startdateError.textContent=e;
+        }
+    })
+    year.addEventListener('input',function(){
+        try{
+            (new EmployeePayrollData()).startDate=day.value+"-"+month.value+"-"+year.value;;
+            startdateError.textContent="";
+        }catch(e){
+            startdateError.textContent=e;
+        }
+    })
+
 });
